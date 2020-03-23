@@ -5,5 +5,10 @@
  * @returns {string[]} the list of the properties of the object
  *                     or empty array if it is not an object
  */
-var obj = { 1: 'a', 2: 'b', 3: 'c'};
-console.log(Object.keys(obj));
+function prop(o){
+    if (typeof o !== "object"){
+        return [];
+    }
+    return Object.keys(o);
+}
+module.exports = prop;

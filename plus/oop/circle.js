@@ -7,15 +7,18 @@
  * @function perimeter return the perimeter of the circle
  */
 
-
-var circle = {
-    r: 4,
-    area: function(r) {
+class Circle{
+    constructor(r){
+        if (typeof r !== "number" || r < 0){
+            throw new Error("radius is not valid");
+        }
+        this.r = r;
+    }
+    getArea(){
         return this.r * this.r * Math.PI;
-    },
-    perimeter: function(r) {
+    }
+    getPerimeter(){
         return 2 * this.r * Math.PI;
     }
 }
-circle.area();
-circle.perimeter();
+module.exports = Circle;

@@ -5,6 +5,15 @@
  * @param {object} o the object
  * @returns {object} the new object
  */
-const o = {};
-o.key = "type";
-o[type];
+function reverse(o){
+    if (typeof o !== "object"){
+        throw new Error("param is not an object");
+    }
+    var reversed = {};
+    for(const key in o){
+        const value = o[key];
+        reversed[value] = key;
+    }
+    return reversed;
+}
+module.exports = reverse;

@@ -5,3 +5,6 @@
  * @param {object} o the object
  * @returns {object} the new object
  */
+const o = {};
+o.key = "type";
+o[type];

@@ -20,11 +20,28 @@ class Element{
     constructor(name, locator){
         this.locator = locator;
         this.name = name;
+
+        this.parent = null;
+        this.children = {};
     }
 
     setParent(parent){
         this.parent = parent;
     }
+    addChildren(child){
+        if(this.children.hasOwnProperty(child.name)){
+            throw new Error(child.name + " is already added");
+        }
+        this.children[child.name] = child;
+    }
+    get(name){
+        if(!name){
+            return element(this.locator);
+        }
+        if(this.children[name]){
+            return this.children[name].get();
+        }
+            throw new Error("cannot find element"); 
+    }
 }
-
-module.exports (Elements);
+module.exports = Element;

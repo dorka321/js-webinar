@@ -13,3 +13,19 @@
  * 6. It has a method to retrieve one element from the collection
  *    by the locator (.get(n)) in it's context
  */
+const Element = require("./Element");
+
+class Elements extends Element {
+    constructor(name, locator){
+        super(name, locator);
+
+        this.children = null;
+    }
+    all(){
+      return element.all(this.locator);
+    }
+    get(n){
+      return element.all(this.locator).get(n);
+    }
+}
+module.exports = Elements;

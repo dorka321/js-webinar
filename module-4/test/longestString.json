@@ -12,7 +12,7 @@
         "result": "arm"
     },
     {
-        "arguments": [[true, "hello", "world"]],
+        "arguments": [[true, 1, "hello", "world"]],
         "result": "hello"
     }
 ]
